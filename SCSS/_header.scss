@@ -1,6 +1,10 @@
 .header {
   nav {
-    padding: 2.375rem;
+    position: fixed;
+    z-index: 1;
+    background-color: $darkBlue;
+    width: 100%;
+    padding: 1.25rem 2rem;
   }
 
   &__logo {
@@ -9,20 +13,36 @@
     font-size: $largeSize;
   }
 
-  &__menu {
+  &__toggle {
     div {
       background-color: $white;
+      transform-origin: 2px center;
+      transition: all 400ms ease;
 
       &:nth-child(1) {
         width: 30px;
         margin-bottom: 12px;
-        height: 2.55px;
+        height: 2.49px;
+
+        &.open {
+          &:nth-child(1) {
+            transform: rotate(45deg);
+            width: 24px;
+          }
+        }
       }
 
       &:nth-child(2) {
         margin-left: auto;
         width: 20px;
-        height: 2.5px;
+        height: 2.49px;
+
+        &.open {
+          &:nth-child(2) {
+            transform: rotate(-45deg);
+            width: 24px;
+          }
+        }
       }
     }
   }
@@ -32,6 +52,26 @@
       margin: 0 1rem;
       font-size: $regularSize;
       color: $white;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    background-color: $darkBlue;
+    width: 100%;
+    transform: translateY(-100%);
+    padding: 0 2rem 0.875rem;
+    transition: all 800ms ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.247);
+
+    a {
+      padding: 1.25rem 0;
+      font-size: $smallSize;
+      color: $white;
+    }
+
+    &.slide {
+      transform: translateY(calc(0% + 4rem));
     }
   }
 }
