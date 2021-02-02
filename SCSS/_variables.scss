@@ -6,6 +6,7 @@ $invisiblePurple: rgba(158, 168, 203, 0.25);
 $invisibleDarkBlue: rgba(50, 53, 64, 0.81);
 $white: #ffffff;
 $invisibleWhite: rgba(255, 255, 255, 0.45);
+$invisibleWhite2: rgba(255, 255, 255, 0.22);
 $black: #000000;
 
 @font-face {
@@ -17,8 +18,8 @@ $black: #000000;
 
 $xSmallSize: 0.85rem;
 $smallSize: 0.9375rem;
-$regularSize: 1rem;
-$semiSize: 1.0625rem;
+$regularSize: 1rem; // 16px
+$semiSize: 1.0625rem; // 17px
 $mediumSize: 1.125rem;
 $largeSize: 1.2rem;
 $xLargeSize: 3.125rem;

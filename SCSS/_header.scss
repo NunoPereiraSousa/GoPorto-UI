@@ -73,10 +73,10 @@
   }
 
   &__menu {
-    position: absolute;
+    position: fixed;
+    top: -50%;
     background-color: $darkBlue;
     width: 100%;
-    transform: translateY(-100%);
     padding: 0 2rem 0.875rem;
     transition: all 800ms ease;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.247);
@@ -99,7 +99,7 @@
     }
 
     &.slide {
-      transform: translateY(calc(0% + 4rem));
+      top: calc(0% + 4rem);
     }
   }
 }
