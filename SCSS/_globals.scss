@@ -46,6 +46,22 @@ a:focus {
   }
 }
 
+.grid {
+  display: grid;
+
+  &-gc-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.line {
+  overflow: hidden;
+
+  div {
+    transform: translateY(100%);
+  }
+}
+
 .hide-for-mobile {
   // hide for mobile and tablet
   @include breakpoint-down(medium) {

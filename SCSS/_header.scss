@@ -1,46 +1,52 @@
 .header {
   nav {
     position: fixed;
+    top: 0;
     z-index: 1;
     background-color: $darkBlue;
     width: 100%;
     padding: 1.25rem 2rem;
+
+    @include breakpoint-up(medium) {
+      padding: 1.75rem 2.5rem;
+    }
   }
 
   &__logo {
     color: $white;
     font-weight: 500;
+    letter-spacing: 1px;
     font-size: $largeSize;
   }
 
   &__toggle {
     div {
       background-color: $white;
-      transform-origin: 2px center;
+      transform-origin: 1.5px center;
       transition: all 400ms ease;
 
       &:nth-child(1) {
-        width: 30px;
-        margin-bottom: 12px;
-        height: 2.49px;
+        width: 1.75rem;
+        margin-bottom: 10px;
+        height: 2px;
 
         &.open {
           &:nth-child(1) {
             transform: rotate(45deg);
-            width: 24px;
+            width: 1.25rem;
           }
         }
       }
 
       &:nth-child(2) {
         margin-left: auto;
-        width: 20px;
-        height: 2.49px;
+        width: 1.125rem;
+        height: 2px;
 
         &.open {
           &:nth-child(2) {
             transform: rotate(-45deg);
-            width: 24px;
+            width: 1.25rem;
           }
         }
       }
@@ -50,8 +56,19 @@
   &__links {
     a {
       margin: 0 1rem;
-      font-size: $regularSize;
+      font-size: $mediumSize;
+      font-weight: 500;
       color: $white;
+
+      &:hover {
+        color: $darkYellow;
+      }
+
+      @include breakpoint-up(large) {
+        font-size: $regularSize;
+        font-weight: 400;
+        margin: 0 2rem;
+      }
     }
   }
 
@@ -65,9 +82,20 @@
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.247);
 
     a {
-      padding: 1.25rem 0;
+      position: relative;
+      padding: 1.25rem 0 1.25rem 2.3rem;
       font-size: $smallSize;
       color: $white;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $darkYellow;
+      }
     }
 
     &.slide {

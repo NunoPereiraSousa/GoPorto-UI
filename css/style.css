@@ -3,6 +3,20 @@
   src: url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 }
 
+@-webkit-keyframes show-up {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes show-up {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
 html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
@@ -64,6 +78,25 @@ a:focus {
           align-items: center;
 }
 
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.grid-gc-2 {
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.line {
+  overflow: hidden;
+}
+
+.line div {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
 @media (max-width: 63.9375em) {
   .hide-for-mobile {
     display: none;
@@ -78,54 +111,75 @@ a:focus {
 
 .header nav {
   position: fixed;
+  top: 0;
   z-index: 1;
   background-color: #13161f;
   width: 100%;
   padding: 1.25rem 2rem;
 }
 
+@media (min-width: 40em) {
+  .header nav {
+    padding: 1.75rem 2.5rem;
+  }
+}
+
 .header__logo {
   color: #ffffff;
   font-weight: 500;
+  letter-spacing: 1px;
   font-size: 1.2rem;
 }
 
 .header__toggle div {
   background-color: #ffffff;
-  -webkit-transform-origin: 2px center;
-          transform-origin: 2px center;
+  -webkit-transform-origin: 1.5px center;
+          transform-origin: 1.5px center;
   -webkit-transition: all 400ms ease;
   transition: all 400ms ease;
 }
 
 .header__toggle div:nth-child(1) {
-  width: 30px;
-  margin-bottom: 12px;
-  height: 2.49px;
+  width: 1.75rem;
+  margin-bottom: 10px;
+  height: 2px;
 }
 
 .header__toggle div:nth-child(1).open:nth-child(1) {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  width: 24px;
+  width: 1.25rem;
 }
 
 .header__toggle div:nth-child(2) {
   margin-left: auto;
-  width: 20px;
-  height: 2.49px;
+  width: 1.125rem;
+  height: 2px;
 }
 
 .header__toggle div:nth-child(2).open:nth-child(2) {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  width: 24px;
+  width: 1.25rem;
 }
 
 .header__links a {
   margin: 0 1rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
   color: #ffffff;
+}
+
+.header__links a:hover {
+  color: #e8b45b;
+}
+
+@media (min-width: 64em) {
+  .header__links a {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 2rem;
+  }
 }
 
 .header__menu {
@@ -142,13 +196,205 @@ a:focus {
 }
 
 .header__menu a {
-  padding: 1.25rem 0;
+  position: relative;
+  padding: 1.25rem 0 1.25rem 2.3rem;
   font-size: 0.9375rem;
   color: #ffffff;
+}
+
+.header__menu a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #e8b45b;
 }
 
 .header__menu.slide {
   -webkit-transform: translateY(calc(0% + 4rem));
           transform: translateY(calc(0% + 4rem));
+}
+
+@keyframes show-up {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+.landing {
+  padding: 6.375rem 0 0 0;
+  margin-bottom: 6.375rem;
+  row-gap: 3rem;
+  position: relative;
+  z-index: -1;
+}
+
+@media (min-width: 64em) {
+  .landing {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
+}
+
+.landing__title {
+  padding: 0 2rem;
+}
+
+@media (min-width: 40em) {
+  .landing__title {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .landing__title {
+    margin-top: 4rem;
+  }
+}
+
+.landing__title h1 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(158, 168, 203, 0.25);
+  font-size: 3.125rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 40em) {
+  .landing__title h1 {
+    width: auto;
+    font-size: 6.25rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .landing__title h1 {
+    margin-top: 6rem;
+    font-size: 6.25rem;
+    letter-spacing: 8px;
+  }
+}
+
+.landing__title h1 #go__right {
+  text-align: right;
+}
+
+.landing__title h1 span {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.45);
+}
+
+.landing__image__card {
+  position: relative;
+  margin-left: 34vw;
+}
+
+@media (min-width: 64em) {
+  .landing__image__card {
+    margin-left: 0;
+  }
+}
+
+.landing__image__card .image {
+  min-height: 30.25rem;
+  background-image: url("../Assets/background_porto.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 40em) {
+  .landing__image__card .image {
+    min-height: 48.65rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .landing__image__card .image {
+    min-height: 100vh;
+  }
+}
+
+.landing__image__card .card {
+  background-color: rgba(50, 53, 64, 0.81);
+  position: absolute;
+  top: 10%;
+  left: -30%;
+  padding: 1.75rem 2.125rem;
+  border-radius: 4px;
+}
+
+@media (min-width: 40em) {
+  .landing__image__card .card {
+    padding: 2.5rem 2.625rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .landing__image__card .card {
+    top: 66%;
+    left: -14%;
+  }
+}
+
+.landing__image__card .card__title {
+  margin: 0 0 1.875rem 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #e8b45b;
+}
+
+@media (min-width: 40em) {
+  .landing__image__card .card__title {
+    font-size: 1.125rem;
+  }
+}
+
+.landing__image__card .card__desc {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+@media (min-width: 40em) {
+  .landing__image__card .card__desc {
+    font-size: 1.125rem;
+  }
+}
+
+.landing__image__card .card__desc span {
+  color: #e8b45b;
+}
+
+.landing__image__card .card__button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: 2rem;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.45);
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+.landing__image__card .card__button i {
+  font-weight: 600;
+}
+
+@media (min-width: 40em) {
+  .landing__image__card .card__button {
+    padding: 10px 16px;
+    margin-left: 4rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

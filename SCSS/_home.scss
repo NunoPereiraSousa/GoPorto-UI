@@ -1,0 +1,167 @@
+.landing {
+  padding: 6.375rem 0 0 0;
+  margin-bottom: 6.375rem;
+  row-gap: 3rem;
+  position: relative;
+  z-index: -1;
+
+  @include breakpoint-up(large) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
+
+  &__title {
+    padding: 0 2rem;
+
+    @include breakpoint-up(medium) {
+      padding: 0 2.5rem;
+    }
+
+    @include breakpoint-up(large) {
+      margin-top: 4rem;
+    }
+
+    h1 {
+      width: fit-content;
+      margin: 0;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px $invisiblePurple;
+      font-size: $xLargeSize;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      @include breakpoint-up(medium) {
+        width: auto;
+        font-size: $xLargeSizeTablet;
+      }
+
+      @include breakpoint-up(large) {
+        margin-top: 6rem;
+        font-size: $xLargeSizeTablet;
+        letter-spacing: 8px;
+      }
+
+      #go__right {
+        text-align: right;
+      }
+
+      span {
+        -webkit-text-stroke: 1px $invisibleWhite;
+      }
+    }
+  }
+
+  &__image__card {
+    position: relative;
+    margin-left: 34vw;
+
+    @include breakpoint-up(large) {
+      margin-left: 0;
+    }
+
+    .image {
+      min-height: 30.25rem;
+      background-image: url("../Assets/background_porto.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include breakpoint-up(medium) {
+        min-height: 48.65rem;
+      }
+
+      @include breakpoint-up(large) {
+        min-height: 100vh;
+      }
+    }
+
+    .card {
+      background-color: $invisibleDarkBlue;
+      position: absolute;
+      top: 10%;
+      left: -30%;
+      padding: 1.75rem 2.125rem;
+      border-radius: 4px;
+
+      @include breakpoint-up(medium) {
+        padding: 2.5rem 2.625rem;
+      }
+
+      @include breakpoint-up(large) {
+        top: 66%;
+        left: -14%;
+      }
+
+      &__title {
+        margin: 0 0 1.875rem 0;
+        font-size: $smallSize;
+        font-weight: 500;
+        color: $darkYellow;
+
+        @include breakpoint-up(medium) {
+          font-size: $mediumSize;
+        }
+      }
+
+      &__desc {
+        margin: 0;
+        font-size: $smallSize;
+        font-weight: 400;
+        color: $white;
+        line-height: 1.5;
+
+        @include breakpoint-up(medium) {
+          font-size: $mediumSize;
+        }
+
+        span {
+          color: $darkYellow;
+        }
+      }
+
+      &__button {
+        height: fit-content;
+        margin-left: 2rem;
+        padding: 8px 12px;
+        background-color: $invisibleWhite;
+        border: none;
+        border-radius: 6px;
+        color: $white;
+
+        i {
+          font-weight: 600;
+        }
+
+        @include breakpoint-up(medium) {
+          padding: 10px 16px;
+          margin-left: 4rem;
+        }
+      }
+    }
+  }
+
+  //   &__scroll__down {
+  //     position: absolute;
+  //     bottom: 12.5%;
+  //     left: -0.6rem;
+  //     transform-origin: 2px left;
+  //     transform: rotate(90deg);
+
+  //     .scroll__text {
+  //       width: fit-content;
+  //       margin: 0;
+  //       color: $white;
+  //       font-size: $smallSize;
+
+  //       &::after {
+  //         content: "";
+  //         position: absolute;
+  //         top: 50%;
+  //         right: -50%;
+  //         background-color: $white;
+  //         height: 2px;
+  //         width: 2rem;
+  //       }
+  //     }
+  //   }
+}

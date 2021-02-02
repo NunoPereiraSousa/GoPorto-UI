@@ -1,6 +1,11 @@
 $darkBlue: #13161f;
 $darkYellow: #e8b45b;
+$greyBlue: #323540;
+$lightPurple: #9ea8cb;
+$invisiblePurple: rgba(158, 168, 203, 0.25);
+$invisibleDarkBlue: rgba(50, 53, 64, 0.81);
 $white: #ffffff;
+$invisibleWhite: rgba(255, 255, 255, 0.45);
 $black: #000000;
 
 @font-face {
@@ -10,7 +15,13 @@ $black: #000000;
 
 // font-sizes
 
+$xSmallSize: 0.85rem;
 $smallSize: 0.9375rem;
 $regularSize: 1rem;
+$semiSize: 1.0625rem;
 $mediumSize: 1.125rem;
 $largeSize: 1.2rem;
+$xLargeSize: 3.125rem;
+$xLargeSizeTablet: 6.25rem;
+$xLargeSizeDesktop: 7.875rem;
+$xLargeSizeLargeScreen: 9.375rem;
